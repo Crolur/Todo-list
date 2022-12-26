@@ -17,8 +17,12 @@ input[type=text], input[type=text]:focus{
 
 .todos li{
     background-color: hsl(249, 31%, 33%);
+    background-color: hsl(249, 31%, 33%);
+    box-shadow: 10px 10px 0px 0px #2a2649;
+    margin: 8px auto;
 
 }
+
 .todos li:hover{
     background-color: hsl(249, 31%, 40%);
     transition: .2s;
