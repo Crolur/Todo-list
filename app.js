@@ -39,7 +39,7 @@ list.addEventListener('click', e => {
         setTimeout(() =>{
             e.target.parentElement.remove();
 
-        }, 500);
+        }, 600);
     }
     
 });
