@@ -51,6 +51,7 @@ input[type=text], input[type=text]:focus{
     top: -11px;
     transform: skewY(-60deg);
     border: 1px solid;
+    filter: brightness(0.8);
   }
 
   .todos li::before {
@@ -63,6 +64,7 @@ input[type=text], input[type=text]:focus{
     top: -21px;
     transform: skewX(-30deg);
     border: 1px solid;
+     filter: brightness(1.6);
   }
 
 .todos li:hover{
