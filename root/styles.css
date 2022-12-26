@@ -1,0 +1,140 @@
+body{
+    background-color: hsl(235, 20%, 30%);
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.container{
+    max-width: 400px;
+}
+
+input[type=text], input[type=text]:focus{
+    color: #fff;
+    border: none;
+    background: rgba(0,0,0,0.2);
+    max-width: 400px;
+
+}
+
+
+.todos li{
+    display: block;
+    background-color: hsl(249, 31%, 33%);
+    margin: 20px auto;
+    width: 100%;
+    overflow-wrap: anywhere;
+    border: 1px solid;
+
+}
+
+.todos li span{
+    width: 90%;
+}
+
+.list-group-item:first-child{
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
+}
+.list-group-item:last-child {
+    border-bottom-right-radius: unset;
+    border-bottom-left-radius: unset;
+  }
+
+
+.todos li::after {
+    content: '';
+    position: absolute;
+    background-color: hsl(249, 31%, 33%);
+    width: 12px;
+    height: calc(100% + 1px);
+    right: -13px;
+    top: -11px;
+    transform: skewY(-60deg);
+    border: 1px solid;
+  }
+
+  .todos li::before {
+    content: '';
+    position: absolute;
+    background-color: hsl(249, 31%, 33%);
+    width: calc(100% + 2px);
+    height: 20px;
+    left: 5px;
+    top: -21px;
+    transform: skewX(-30deg);
+    border: 1px solid;
+  }
+
+.todos li:hover{
+/*     background-color: hsl(249, 31%, 40%);
+ */ 
+    filter: brightness(1.3);   
+    transition: .2s;
+    transition-timing-function: linear;
+}
+
+.delete{
+    cursor: pointer;
+}
+
+.filtered{
+    display: none !important;
+}
+
+.onDelete{
+    animation-name: onDelete;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+}
+@keyframes onDelete {
+    0%{opacity: 1;   bottom: 0px; left: 0px;}
+    100%{opacity: 0; bottom: 30px; left: 30px;; /* scale: 1.1; */}
+}
+
+
+.onDelete::before{
+    animation-name: onDeleteBefore;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+}
+@keyframes onDeleteBefore {
+    0%{top: -21px;}
+    100%{top: -81px;}
+}
+
+.onDelete::after{
+    animation-name: onDeleteAfter;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+}
+@keyframes onDeleteAfter {
+    0%{right: -13px;}
+    100%{right: -73px;}
+}
+
+
+
+.onAdd{
+    animation-name: onAdd;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes onAdd {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+    
+}
