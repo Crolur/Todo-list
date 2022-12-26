@@ -1,0 +1,62 @@
+body{
+    background-color: #352f5b;
+    overflow: hidden;
+}
+
+.container{
+    max-width: 400px;
+}
+
+input[type=text], input[type=text]:focus{
+    color: #fff;
+    border: none;
+    background: rgba(0,0,0,0.2);
+    max-width: 400px;
+
+}
+
+.todos li{
+    background-color: hsl(249, 31%, 33%);
+
+}
+.todos li:hover{
+    background-color: hsl(249, 31%, 40%);
+    transition: .2s;
+    transition-timing-function: linear;
+}
+
+.delete{
+    cursor: pointer;
+}
+
+.filtered{
+    display: none !important;
+}
+
+.onDelete{
+    animation-name: onDelete;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes onDelete {
+    0%{opacity: 1;   left: 0px;}
+    100%{opacity: 0; left: 100px;}
+}
+
+.onAdd{
+    animation-name: onAdd;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes onAdd {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+    
+}
