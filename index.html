@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -14,6 +15,16 @@
 
     <header class="text-center text-light my-4">
       <h1 class="mb-4">Todo List</h1>
+      <div class="menu">
+        <form class="animation">
+          <input type="radio" name="animation" id="1" value="600" checked>
+          <label for="1">Animation 1</label> <br>
+          <input type="radio" name="animation" id="2" value="600" disabled>
+          <label for="2">Animation 2</label><br>
+          <input type="radio" name="animation" id="3" value="600" disabled>
+          <label for="3">Animation 3</label>
+        </form>
+      </div>
       <form class="search">
         <input autocomplete="off" class="form-control m-auto" type="text" name="search" placeholder="search todos" />
       </form>
@@ -44,4 +55,5 @@
 
   <script src="app.js"></script>
 </body>
+</html>
 </html>
