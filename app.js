@@ -2,10 +2,39 @@ const addForm = document.querySelector('.add');
 const list = document.querySelector('.todos');
 const searchInput = document.querySelector('.search input');
 const search = document.querySelector('.search');
-//console.log(addForm);
+const animationForm = document.querySelector('.animation');
+
+
+//changing animation
+let currentAnimation = 1; //class onDelete1
+let currentAnimatonTime = 600;
+
+animationForm.addEventListener('click', e => {
+    e.stopPropagation();
+    //console.log(e.target.type);
+    if(e.target.type === 'radio'){
+        //console.log(e.target.id)
+        //console.log(e.target.value)
+        currentAnimation = e.target.id;
+        currentAnimatonTime = e.target.value;
+    };
+})
+
+
+
+//adding new list Elements
+addForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const todo = addForm.add.value.trim();
+    //console.log(todo);
+    if(todo.length){
+        generateTemplate(todo);
+        addForm.reset();
+    };
+    
+});
 
 const generateTemplate = todo => {
-
   const html = document.createElement('li');
   html.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center', 'onAdd');
 
@@ -20,30 +49,23 @@ const generateTemplate = todo => {
   list.appendChild(html);
 };
 
-addForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const todo = addForm.add.value.trim();
-    //console.log(todo);
-    if(todo.length){
-        generateTemplate(todo);
-        addForm.reset();
-    };
-    
-});
-
+//Removing list elements with animations
 list.addEventListener('click', e => {
     //console.log(e.target);
     if(e.target.classList.contains('delete')){
         e.target.parentElement.classList.remove('onAdd');
-        e.target.parentElement.classList.add('onDelete');
+        e.target.parentElement.classList.add(`onDelete${currentAnimation}`);
         setTimeout(() =>{
             e.target.parentElement.remove();
 
-        }, 600);
+        }, currentAnimatonTime);
     }
     
 });
 
+
+
+//filtering
 const filterTodos = term => {
     //console.log(term);
     //console.log(Array.from(list.children));
