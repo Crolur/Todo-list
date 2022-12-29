@@ -64,7 +64,7 @@ input[type=text], input[type=text]:focus{
     top: -21px;
     transform: skewX(-30deg);
     border: 1px solid;
-     filter: brightness(1.6);
+    filter: brightness(1.6);
   }
 
 .todos li:hover{
@@ -83,51 +83,7 @@ input[type=text], input[type=text]:focus{
     display: none !important;
 }
 
-.onDelete{
-    animation-name: onDelete;
-    animation-duration: .5s;
-    animation-timing-function: linear;
-    animation-direction: normal;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-
-}
-@keyframes onDelete {
-    0%{opacity: 1;   bottom: 0px; left: 0px;}
-    100%{opacity: 0; bottom: 30px; left: 30px;; /* scale: 1.1; */}
-}
-
-
-.onDelete::before{
-    animation-name: onDeleteBefore;
-    animation-duration: .5s;
-    animation-timing-function: linear;
-    animation-direction: normal;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-
-}
-@keyframes onDeleteBefore {
-    0%{top: -21px;}
-    100%{top: -81px;}
-}
-
-.onDelete::after{
-    animation-name: onDeleteAfter;
-    animation-duration: .5s;
-    animation-timing-function: linear;
-    animation-direction: normal;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-
-}
-@keyframes onDeleteAfter {
-    0%{right: -13px;}
-    100%{right: -73px;}
-}
-
-
-
+/* Adding animation */
 .onAdd{
     animation-name: onAdd;
     animation-duration: .5s;
@@ -140,3 +96,51 @@ input[type=text], input[type=text]:focus{
     100%{opacity: 1;}
     
 }
+/* /Adding animation */
+
+/* Animation 1 */
+.onDelete1{
+    animation-name: onDelete1;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+}
+@keyframes onDelete1 {
+    0%{opacity: 1;   bottom: 0px; left: 0px;}
+    100%{opacity: 0; bottom: 30px; left: 30px;; /* scale: 1.1; */}
+}
+
+
+.onDelete1::before{
+    animation-name: onDelete1Before;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+}
+@keyframes onDelete1Before {
+    0%{top: -21px;}
+    100%{top: -81px;}
+}
+
+.onDelete1::after{
+    animation-name: onDelete1After;
+    animation-duration: .5s;
+    animation-timing-function: linear;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+
+}
+@keyframes onDelete1After {
+    0%{right: -13px;}
+    100%{right: -73px;}
+}
+
+/* /Animation 1 */
+
