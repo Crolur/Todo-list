@@ -144,3 +144,24 @@ input[type=text], input[type=text]:focus{
 
 /* /Animation 1 */
 
+/* Animation 2 */
+
+
+.onDelete2 {
+	animation: onDelete2 0.7s cubic-bezier(0.680, -0.550, 0.265, 1.550) both;
+}
+
+
+ @keyframes onDelete2 {
+    0% {
+      scale: 1;
+      opacity: 1;
+    }
+    100% {
+      scale: 10;
+      opacity: 0;
+    }
+  }
+  
+
+/* /Animation 2 */
