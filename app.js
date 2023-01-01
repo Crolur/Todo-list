@@ -6,8 +6,16 @@ const animationForm = document.querySelector('.animation');
 
 
 //changing animation
-let currentAnimation = 1; //class onDelete1
-let currentAnimatonTime = 600;
+let currentAnimation;
+let currentAnimatonTime;
+
+Array.from(animationForm).forEach(element => {
+    if(element.checked === true){
+        currentAnimation = element.id;
+        currentAnimatonTime = element.value;
+    }
+
+});
 
 animationForm.addEventListener('click', e => {
     e.stopPropagation();
